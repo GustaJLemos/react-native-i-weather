@@ -38,5 +38,20 @@ describe('Component: SelectList', () => {
     expect(onPress).toBeCalledTimes(1)
     // verificando se o onPress foi chamado com o terceiro item selecionado, ou seja campo grande
     expect(onPress).toBeCalledWith(data[2])
-  })
+  });
+
+  it('not should be show options when data props is empty', () => {
+    render(
+      <SelectList
+        data={[]}
+        onChange={() => { }}
+        onPress={() => { }}
+      />
+    )
+
+    const options = screen.getByTestId('options');
+    // vai mostrar um array vazio pq n tem nenhuma opção para exibir
+    console.log(options.children)
+    expect(options.children).toHaveLength(0);
+  });
 });
