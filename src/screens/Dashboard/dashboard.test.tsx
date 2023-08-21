@@ -6,25 +6,32 @@ import { saveStorageCity } from '@libs/asyncStorage/cityStorage';
 import { mockCityAPIResponse } from '@__tests__/mocks/mockCityAPIResponse';
 
 describe('Screen: Dashboard', () => {
+  // antes de todos os testes
+  beforeAll(async () => {
+    // ...
+    const city = { id: '1', name: 'Rio do Sul, BR', latitude: 456, longitude: 123 }
+
+    await saveStorageCity(city);
+  });
+
+  // depois de todos os testes
+  // afterAll(() => {
+  //   // ...
+  // });
+
+  // tbm temos o afterEach e before q nesse caso, é utilizado para cada teste
+
   it('should be show city weather', async () => {
     jest.spyOn(api, 'get').mockResolvedValue({ data: mockWeatherAPIResponse })
 
-    const city = { id: '1', name: 'Ponta Grossa', latitude: 456, longitude: 123 }
-
-    await saveStorageCity(city);
-
     render(<Dashboard />)
 
-    const cityName = await waitFor(() => screen.findByText(/ponta grossa/i))
+    const cityName = await waitFor(() => screen.findByText(/rio do sul/i))
 
     expect(cityName).toBeTruthy()
   })
 
   it('should be show another selected weather city', async () => {
-    const city = { id: '1', name: 'Rio do SUl, BR', latitude: 456, longitude: 123 }
-
-    await saveStorageCity(city);
-
     // assim eu faço retornar um payload pra cada requisição, ou seja, primeira chamada de get, esse payload, dps outros... assim vai
     jest.spyOn(api, 'get')
       .mockResolvedValueOnce({ data: mockWeatherAPIResponse })
