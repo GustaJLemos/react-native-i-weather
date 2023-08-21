@@ -8,6 +8,10 @@ import { Routes } from './src/routes';
 import { Loading } from './src/components/Loading';
 import { CityProvider } from '@contexts/CityContext';
 
+// bail = prop para falar pros nossos testes que quando der erro, ele pare de executar o restante
+
+// "test:watch": "jest --watchAll" script usado pra q quando a gente salve, ele já atualize automaticamente o nosso app
+
 export default function App() {
   const [fontsLoaded] = useFonts({ Nunito_400Regular, Nunito_700Bold, Nunito_800ExtraBold });
 
