@@ -7,6 +7,9 @@
       "android": {
         "buildType": "apk"
       },
+      "ios": {
+        "simulator": true
+      },
       "env": {
         "EXPO_PUBLIC_WEATHER_APP_ID": "209bb76759be33e6e1dd9f8d166f927d"
       }
