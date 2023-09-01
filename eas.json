@@ -4,8 +4,10 @@
   },
   "build": {
     "preview": {
+      "autoIncrement": true,
       "android": {
-        "buildType": "apk"
+        "buildType": "apk",
+        "autoIncrement": "versionCode"
       },
       "ios": {
         "simulator": true
@@ -17,6 +19,19 @@
     "production": {
       "env": {
         "EXPO_PUBLIC_WEATHER_APP_ID": "209bb76759be33e6e1dd9f8d166f927d"
+      },
+      "autoIncrement": true,
+      "android": {
+        "autoIncrement": "versionCode"
+      }
+    }
+  },
+  "submit": {
+    "preview": {
+      "android": {
+        "track": "internal",
+        "serviceAccountKeyPath": "./google-services.json",
+        "releaseStatus": "draft"
       }
     }
   }
