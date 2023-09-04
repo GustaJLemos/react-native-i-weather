@@ -47,6 +47,9 @@ jobs:
       #     packager: npm
       #     token: ${{ secrets.EAS_EXPO_TOKEN }}
       
+      # - name: Install dependencies
+      #   run: npm install
+
       # - name: Get config file
       #   env: 
       #     GOOGLE_SERVICES_64: ${{ secrets.EAS_GOOGLE_PLAY_API }}
