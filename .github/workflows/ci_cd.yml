@@ -55,4 +55,4 @@ jobs:
       #     base64 -d -i google-services.json.b64 > google-services.json
 
       # - name: Build
-      #   run: eas build --platform android --profile preview --non-interactive --no-wait
+      #   run: EXPO_APPLE_APP_SPECIFIC_PASSWORD=${{ secrets.EAS_APPLE_APP_SPECIFIC_PASSWORD }} eas build --platform ios --profile preview --non-interactive --auto-submit-with-profile=preview --no-wait

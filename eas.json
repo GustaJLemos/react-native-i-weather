@@ -32,6 +32,10 @@
         "track": "internal",
         "serviceAccountKeyPath": "./google-services.json",
         "releaseStatus": "draft"
+      },
+      "ios": {
+        "appleId": "gustavo.mendes@sistemairis.com.br",
+        "ascAppId": "numero de dentro do apple Id"
       }
     }
   }
