@@ -16,7 +16,8 @@
       },
       "env": {
         "EXPO_PUBLIC_WEATHER_APP_ID": "209bb76759be33e6e1dd9f8d166f927d"
-      }
+      },
+      "channel": "preview"
     },
     "production": {
       "env": {
@@ -29,7 +30,8 @@
       "ios": {
         "image": "latest",
         "autoIncrement": "buildNumber"
-      }
+      },
+      "channel": "production"
     }
   },
   "submit": {
